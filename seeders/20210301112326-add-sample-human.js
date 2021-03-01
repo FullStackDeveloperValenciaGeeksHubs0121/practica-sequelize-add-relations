@@ -3,18 +3,23 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
 
-    await queryInterface.bulkInsert('Humans', [
+    const result = await queryInterface.bulkInsert('Humans', [
       {
         name: 'Mario',
         genre:'H',
-        age: 12
+        age: 12,
+        createdAt: new Date,
+        updatedAt: new Date
       },{
         name: 'Lucia',
         genre:'M',
-        age: 16
+        age: 16,
+        createdAt: new Date,
+        updatedAt: new Date
       }
   
-  ], {});
+    ], {});
+    console.log(result);
 
   },
 
