@@ -5,13 +5,13 @@ module.exports = {
 
     const result = await queryInterface.bulkInsert('Humans', [
       {
-        name: 'Mario',
+        name: 'Adan',
         genre:'H',
         age: 12,
         createdAt: new Date,
         updatedAt: new Date
       },{
-        name: 'Lucia',
+        name: 'Eva',
         genre:'M',
         age: 16,
         createdAt: new Date,
@@ -19,6 +19,25 @@ module.exports = {
       }
   
     ], {});
+    await queryInterface.bulkInsert('Humans', [
+      {
+        name: 'Cain',
+        genre:'H',
+        age: 12,
+        createdAt: new Date,
+        updatedAt: new Date,
+        parentId: 1
+      },{
+        name: 'Abel',
+        genre:'H',
+        age: 16,
+        createdAt: new Date,
+        updatedAt: new Date,
+        parentId: 1
+      }
+  
+    ], {});
+
     console.log(result);
 
   },
